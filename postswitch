@@ -4,12 +4,19 @@
 sh ~/.screenlayout/standard.sh #hardcoded rules
 sleep 1 
 nitrogen --restore #wallpaper if resolution has changed
-#keyboard - language, shortcuts, ctrl instead of caps lock
+#keyboard - language, shortcuts, kill your caps lock
 setxkbmap -model pc105 -layout "us,bg(phonetic)" -option "grp:alt_shift_toggle" 
 sleep 1
 xmodmap ~/.Xmodmap &
 #semafors
-(sleep 10s && /usr/bin/sh ~/bin/semafor.sh) &
+sleep 10
+/usr/bin/python2 /home/kori/bin/semafor_vars.py &
+sleep 20
+/usr/bin/python2 /home/kori/bin/semafor_admin1.py &
+sleep 10
+/usr/bin/devilspie -a /home/kori/.devilspie/semafor.ds &
+sleep 5
+openbox --restart &
 #var crap
 pgrep pidgin &> /dev/null || /usr/bin/pidgin &
 pgrep clipit &> /dev/null || /usr/bin/clipit &
