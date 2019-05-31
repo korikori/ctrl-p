@@ -10,11 +10,11 @@ sleep 1
 xmodmap ~/.Xmodmap &
 #semafors
 sleep 10
-/usr/bin/python2 /home/kori/bin/semafor_vars.py &
+/usr/bin/python2 ~/bin/semafor_vars.py &
 sleep 20
-/usr/bin/python2 /home/kori/bin/semafor_admin1.py &
+/usr/bin/python2 ~/bin/semafor_admin1.py &
 sleep 10
-/usr/bin/devilspie -a /home/kori/.devilspie/semafor.ds &
+/usr/bin/devilspie -a ~/.devilspie/semafor.ds &
 sleep 5
 openbox --restart &
 #var crap
