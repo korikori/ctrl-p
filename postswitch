@@ -1,27 +1,13 @@
 #!/bin/sh
-#switch display if external display available
-#bash ~/bin/autorandr -c #assuming autorandr works
-sh ~/.screenlayout/standard.sh #hardcoded rules
-sleep 1 
-nitrogen --restore #wallpaper if resolution has changed
-#keyboard - language, shortcuts, kill your caps lock
+#keys
 setxkbmap -model pc105 -layout "us,bg(phonetic)" -option "grp:alt_shift_toggle" 
 sleep 1
 xmodmap ~/.Xmodmap &
-#semafors
-sleep 10
-/usr/bin/python2 ~/bin/semafor_vars.py &
-sleep 20
-/usr/bin/python2 ~/bin/semafor_admin1.py &
-sleep 10
-/usr/bin/devilspie -a ~/.devilspie/semafor.ds &
-sleep 5
-openbox --restart &
-#var crap
+#comms
 pgrep pidgin &> /dev/null || /usr/bin/pidgin &
-pgrep clipit &> /dev/null || /usr/bin/clipit &
+#semafors
+sleep 5
+bash ~/bin/semafor1.sh &
+#wear eye protection
 pgrep safeeyes &> /dev/null || /usr/bin/safeeyes &
-pgrep terminator &> /dev/null || terminator -l work &
-#autokey
-sleep 60
-pgrep autokey-gtk &> /dev/null || /usr/bin/autokey-gtk &
+pgrep redshift &> /dev/null || /usr/bin/redshift-gtk &
