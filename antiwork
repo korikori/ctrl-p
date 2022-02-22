@@ -3,3 +3,4 @@ pgrep safeeyes | xargs kill
 pgrep redshift | xargs kill
 /bin/bash ~/bin/semakill.sh
 pgrep pidgin | xargs kill
+pgrep devilspie | xargs kill
